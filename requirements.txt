@@ -1,0 +1,7 @@
+loguru
+aiohttp
+web3
+python-dotenv
+pydantic
+pydantic-settings
+httpx
