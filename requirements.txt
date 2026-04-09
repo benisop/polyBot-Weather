@@ -10,3 +10,4 @@ eth-account
 aiohttp-socks
 numpy
 scipy
+py-clob-client
