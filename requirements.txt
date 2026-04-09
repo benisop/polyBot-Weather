@@ -5,3 +5,8 @@ python-dotenv
 pydantic
 pydantic-settings
 httpx
+orjson
+eth-account
+aiohttp-socks
+numpy
+scipy
