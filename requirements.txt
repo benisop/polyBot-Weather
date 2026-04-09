@@ -11,3 +11,4 @@ aiohttp-socks
 numpy
 scipy
 py-clob-client
+aiosqlite
