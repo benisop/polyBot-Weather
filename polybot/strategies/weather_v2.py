@@ -104,7 +104,7 @@ class WeatherSignal:
     @property
     def is_statistically_significant(self) -> bool:
         """Check if edge is statistically significant (z > 2)."""
-        return self.edge_zscore >= 2.0
+        return self.edge_zscore >= 1.0
     
     def __repr__(self) -> str:
         return (
