@@ -355,7 +355,7 @@ class PolyBotRunner:
                     logger.info(
                         f"💰 Balance: ${summary['current_balance']:.2f} | "
                         f"P&L: ${summary['total_pnl']:.2f} ({summary['return_percent']:.1f}%) | "
-                        f"Trades: {summary['trades_executed']}"
+                        f"Trades: {summary['total_trades']}"
                     )
                 
                 # Wait for next scan
