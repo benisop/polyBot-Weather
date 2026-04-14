@@ -81,28 +81,28 @@ class DetectedTrade:
 # These are example addresses - you'd want to research actual top performers
 DEFAULT_TOP_TRADERS = [
     TopTrader(
-        address="0x1234567890abcdef1234567890abcdef12345678",  # Placeholder
-        name="Trader_Alpha",
-        win_rate=0.72,
-        total_profit=Decimal("150000"),
-        avg_position_size=Decimal("5000"),
-        specialty="politics",
+        address="0xfbb7fc19f80b26152fc5886b5eafa7d437f26f27",
+        name="Wallet_1",
+        win_rate=0.70,
+        total_profit=Decimal("1000"),
+        avg_position_size=Decimal("100"),
+        specialty="general",
     ),
     TopTrader(
-        address="0xabcdef1234567890abcdef1234567890abcdef12",  # Placeholder
-        name="WeatherWhale",
-        win_rate=0.68,
-        total_profit=Decimal("85000"),
-        avg_position_size=Decimal("2500"),
-        specialty="weather",
+        address="0x6a8d1709bfb718d8555d315a983c4816278350f9",
+        name="Wallet_2",
+        win_rate=0.70,
+        total_profit=Decimal("1000"),
+        avg_position_size=Decimal("100"),
+        specialty="general",
     ),
     TopTrader(
-        address="0x9876543210fedcba9876543210fedcba98765432",  # Placeholder  
-        name="CryptoOracle",
-        win_rate=0.65,
-        total_profit=Decimal("220000"),
-        avg_position_size=Decimal("10000"),
-        specialty="crypto",
+        address="0x5f211a24da4c005d9438a1ea269673b85ed0b376",
+        name="Wallet_3",
+        win_rate=0.70,
+        total_profit=Decimal("1000"),
+        avg_position_size=Decimal("100"),
+        specialty="general",
     ),
 ]
 
@@ -311,7 +311,7 @@ class CopyTradingConnector:
         """Queue a trade for delayed copying."""
         
         # Calculate copy size
-        copy_size = trade.size * Decimal(str(self.copy_fraction))
+        copy_size = Decimal("10")
         copy_size = min(copy_size, self.max_copy_size)
         copy_size = max(copy_size, Decimal("1"))  # Minimum $1
         
