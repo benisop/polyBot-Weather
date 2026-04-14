@@ -23,7 +23,7 @@ from polybot.connectors.polymarket import PolymarketConnector
 from polybot.connectors.noaa import NOAAConnector
 from polybot.connectors.pyth import PythConnector
 from polybot.connectors.copy_trading import CopyTradingConnector, discover_top_traders
-from polybot.core.risk_manager import RiskManager
+from polybot.core.risk_manager import RiskManager, RiskLimits
 from polybot.core.simulation import SimulationEngine
 from polybot.core.datastore import DataStore, create_datastore
 from polybot.strategies.weather_v2 import WeatherStrategyV2
@@ -102,11 +102,14 @@ class PolyBotRunner:
         
         # Initialize risk manager
         self.risk_manager = RiskManager(
-            max_position_percent=self.settings.risk.max_position_percent,
-            max_slippage_percent=self.settings.risk.max_slippage_percent,
-            max_daily_loss_percent=self.settings.risk.circuit_breaker_loss_percent,
-            max_open_positions=self.settings.risk.max_open_positions,
-            min_profit_threshold=self.settings.risk.min_arb_profit_percent,
+            total_capital=self.starting_capital,
+            limits=RiskLimits(
+                max_position_percent=self.settings.risk.max_position_percent,
+                max_slippage_percent=self.settings.risk.max_slippage_percent,
+                max_daily_loss_percent=self.settings.risk.circuit_breaker_loss_percent,
+                max_open_positions=self.settings.risk.max_open_positions,
+                min_profit_threshold=self.settings.risk.min_arb_profit_percent,
+            )
         )
         
         # Initialize simulation engine if in simulation mode
