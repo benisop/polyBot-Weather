@@ -115,7 +115,7 @@ class PolyBotRunner:
         # Initialize simulation engine if in simulation mode
         if self.simulation_mode:
             self.simulation = SimulationEngine(
-                starting_balance=self.initial_capital,
+                initial_balance=self.starting_capital,
                 fee_percent=Decimal("0"),  # Polymarket is 0% fees
                 slippage_percent=Decimal("0.5"),
             )
