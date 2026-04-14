@@ -159,8 +159,8 @@ class WeatherStrategyV2:
         polymarket: PolymarketConnector,
         noaa: NOAAConnector,
         simulation: Optional[SimulationEngine] = None,
-        min_edge_percent: Decimal = Decimal("10"),  # 10% edge minimum
-        min_zscore: float = 1.5,  # Minimum statistical significance
+        min_edge_percent: Decimal = Decimal("3"),  # 3% edge minimum
+        min_zscore: float = 0.5,  # Minimum statistical significance
         max_kelly_fraction: float = 0.25,  # Cap Kelly at 25% of suggested
     ):
         self.polymarket = polymarket
